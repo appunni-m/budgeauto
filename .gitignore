@@ -1,0 +1,29 @@
+# Virtual Environment
+venv/
+.venv/
+
+# Environment variables
+.env
+*credentials.json
+*credentials*.json
+*.json
+*.pdf
+
+# Downloaded files
+downloads/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE specific files
+.vscode/
+.idea/ 
+
+*.xlsx
+
+*.pdf
+categorization_prompt.txt
+*.csv
+logs/
+budget*.json

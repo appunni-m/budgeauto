@@ -1,0 +1,33 @@
+# Core dependencies for Budget Automation Tool
+
+# For loading configuration from .env file
+python-dotenv
+
+# For interacting with Google APIs (Gmail, Sheets, Drive)
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+
+# Recommended library for simpler Google Sheets interaction
+gspread
+# oauth2client # Often needed for gspread or older Google auth flows, uncomment if required
+
+# For parsing PDF files (choose one or install both if experimenting)
+PyMuPDF
+# pdfplumber
+
+# Add other dependencies as needed, e.g., for LLM interaction:
+# openai
+# anthropic
+pandas # For data manipulation before writing to sheets
+openpyxl # For reading/writing .xlsx files
+
+# For Gemini API interaction
+google-generativeai
+
+# For data validation and modeling
+pydantic-ai
+python-dateutil # For robust date parsing
+
+# For image manipulation (needed for Gemini Vision)
+Pillow
