@@ -501,14 +501,6 @@ def main():
                         for t in final_transactions:
                              if hasattr(t, 'model_dump'):
                                  dumped = t.model_dump(mode='json')
-                                 # Ensure category is saved as string value
-                                 if 'category' in dumped and hasattr(dumped['category'], 'value'):
-                                      dumped['category'] = dumped['category'].value
-                                 elif 'category' in dumped and dumped['category'] is None:
-                                      dumped['category'] = None # Explicitly handle None
-                                 else: # Handle cases where category might be missing or unexpected
-                                      dumped['category'] = None
-                                      logger.warning(f"Transaction missing expected category structure: {dumped.get('description', 'N/A')}")
 
                                  data_to_save.append(dumped)
                              else:

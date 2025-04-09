@@ -48,7 +48,7 @@ class Category(str, Enum):
     SALE = "Sale"
     SALON = "Salon"
     SCOOTER = "Scooter"
-    DELIVERY = "Delivery" # Added
+    COURIER = "Courier" # Added
     PAYMENT = "Payment" # Added
     PETROL = "Petrol" # Added
     SHOPPING = "Shopping" # Added

@@ -51,7 +51,7 @@ BudgeAuto is a Python application designed to automate the process of my persona
 3.  **Google Cloud Project Setup:**
     *   Go to the [Google Cloud Console](https://console.cloud.google.com/).
     *   Create a new project or select an existing one.
-    *   Enable the **Gmail API** and **Google Sheets API** for your project. Search for them in the API library and click "Enable".
+    *   Enable the **Gmail API**, **Google Sheets API**, and **Google Drive API** for your project. Search for them in the API library and click "Enable".
 
 4.  **Create OAuth 2.0 Credentials:**
     *   In the Google Cloud Console, navigate to "APIs & Services" > "Credentials".
@@ -62,8 +62,9 @@ BudgeAuto is a Python application designed to automate the process of my persona
     *   A pop-up will show your Client ID and Client Secret. Click "DOWNLOAD JSON".
     *   **Rename the downloaded file to `budget_app_oauth.json` and place it in the root directory of the `budgeauto` project.**
     *   *Note:* The script requires the following permissions (scopes), which you will be asked to grant during the first run:
-        *   `https://www.googleapis.com/auth/gmail.readonly` (to read emails and download attachments)
-        *   `https://www.googleapis.com/auth/spreadsheets` (to read and write to your Google Sheet)
+        *   `https://www.googleapis.com/auth/gmail.readonly` (To read emails and download attachments)
+        *   `https://www.googleapis.com/auth/spreadsheets` (To read from and write to your Google Sheet)
+        *   `https://www.googleapis.com/auth/drive` (Often required for managing authentication tokens and potentially file operations)
 
 5.  **Google AI API Key:**
     *   Go to [Google AI Studio](https://aistudio.google.com/) or the Google Cloud Console (under "APIs & Services" > "Credentials", create an API Key).
@@ -88,7 +89,7 @@ BudgeAuto is a Python application designed to automate the process of my persona
         ```
     *   The script should automatically open a web browser window.
     *   Log in to the Google Account you specified in `.env`.
-    *   Review the requested permissions (Gmail read-only, Sheets read/write) and grant access.
+    *   Review the requested permissions (Gmail read-only, Sheets read/write, Drive) and grant access.
     *   Upon successful authorization, the script will create a `token.json` file (or similar, depending on the library used) in the project directory. This file stores your authorization credentials securely, so you won't need to re-authenticate each time you run the script.
 
 ## Usage
