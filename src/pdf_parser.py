@@ -136,7 +136,7 @@ def parse_pdfs(pdf_info_list: List[dict], config: dict, credentials, preview_mod
         # Configure GenAI. It should pick up credentials from the environment
         # if the 'credentials' object is standard Google Auth credentials.
         # If specific project is needed, might need: genai.configure(project=credentials.project_id)
-        genai.configure() # Assuming ADC works or GEMINI_API_KEY is set for GenAI library
+        genai.configure(api_key=os.getenv("GOOGLE_API_KEY")) # Assuming ADC works or GEMINI_API_KEY is set for GenAI library
         model = genai.GenerativeModel('gemini-1.5-flash')
     except Exception as e:
         print(f"Error configuring Gemini client: {e}")
