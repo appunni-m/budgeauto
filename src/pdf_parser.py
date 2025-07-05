@@ -258,7 +258,10 @@ def parse_pdfs(pdf_info_list: List[dict], config: dict, credentials, preview_mod
                         # Add source account to each transaction
                         for tx in page_transactions:
                             tx.source_account = source_account
-                            # Other fields (short_description, is_expense, is_split) remain None
+                            # Set split value based on description
+                            if 'achu' in tx.description.lower():
+                                tx.is_split = 2
+                            # Other fields (short_description, is_expense) remain None
 
                         pdf_transactions.extend(page_transactions)
                     # Removed ValidationError import, so cannot catch it specifically. Catching general Exception instead.

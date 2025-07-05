@@ -43,6 +43,7 @@ class Category(str, Enum):
     MEDICAL = "Medical"
     PHONE = "Phone"
     PHILANTHROPY = "Philanthropy"
+    PROCESSED_TRANSACTIONS = "Processed Transactions"
     PROFESSION = "Profession"
     RENT = "Rent"
     SALE = "Sale"
@@ -104,7 +105,7 @@ class Transaction(BaseModel):
     # Fields to be populated by the AI processing step:
     short_description: Optional[str] = Field(None, description="AI-generated short description")
     is_expense: Optional[int] = Field(None, description="AI-determined flag: 1 for expense, 0 for income/credit")
-    is_split: Optional[int] = Field(None, description="AI-determined flag: Indicates if the transaction should be split (1 for True/0 for False)")
+    is_split: Optional[int] = Field(1, description="AI-determined flag: Indicates if the transaction should be split (1 for True/0 for False)")
     category: Optional['Category'] = Field(None, description="Category assigned by AI or default") # Added field
     transaction_type: Literal['credit', 'debit'] = Field(..., description="Type of transaction: credit or debit")
 

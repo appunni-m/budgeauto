@@ -446,7 +446,7 @@ def main():
                             dumped = t.model_dump(mode='json')
                             # Ensure category is NOT saved here
                             if 'category' in dumped:
-                                del dumped['category']
+                                pass
                             data_to_save.append(dumped)
                         else:
                             logger.warning(f"  Skipping unknown type in processed save: {type(t)}")
