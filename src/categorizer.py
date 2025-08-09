@@ -57,12 +57,12 @@ class AIProcessedBatch(BaseModel):
 
 # --- AI Processing Setup ---
 
-API_KEY = os.getenv("GEMINI_API_KEY", os.getenv("GOOGLE_API_KEY"))
+API_KEY = os.getenv("GEMINI_API_KEY")
 agent = None
 gemini_model = None
 
 if not API_KEY:
-    logger.error("GEMINI_API_KEY or GOOGLE_API_KEY environment variable not set. AI Processing disabled.")
+    logger.error("GEMINI_API_KEY environment variable not set. AI Processing disabled.")
 else:
     try:
         gemini_model = GeminiModel('gemini-1.5-flash', provider=GoogleGLAProvider(api_key=API_KEY))

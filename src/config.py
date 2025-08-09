@@ -25,7 +25,7 @@ def load_config():
         'GOOGLE_DRIVE_BUDGET_FOLDER_ID': os.getenv('GOOGLE_DRIVE_BUDGET_FOLDER_ID'),
         'PDF_DOWNLOAD_PATH': os.getenv('PDF_DOWNLOAD_PATH', 'downloads/'), # Default if not set
         'OPENAI_API_KEY': os.getenv('OPENAI_API_KEY'), # Kept for potential future use
-        # 'GEMINI_API_KEY': os.getenv('GEMINI_API_KEY'), # Removed - Using OAuth
+        'GEMINI_API_KEY': os.getenv('GEMINI_API_KEY'),
         'PDF_PASSWORDS': [p.strip() for p in os.getenv('PDF_PASSWORDS', '').split(',') if p.strip()],
         # Add other potential config flags from strategy doc if needed
         # 'CLEANUP_DOWNLOADS': os.getenv('CLEANUP_DOWNLOADS', 'False').lower() == 'true',

@@ -21,12 +21,14 @@ from dateutil import parser as date_parser # Added for flexible date parsing
 from typing import List # For type hinting
 # Local Imports
 import config
+cfg = config.load_config()
+
 import email_handler
 import pdf_parser
-from pdf_parser import Transaction # Import the Transaction model
+from pdf_parser import Transaction
 import categorizer
-from categorizer import Category, process_transactions_ai, filter_expenses # Import Category Enum, AI function, and filter
-from src.models import DEFAULT_CATEGORY_ENUM # Import the default category enum
+from categorizer import Category, process_transactions_ai, filter_expenses
+from src.models import DEFAULT_CATEGORY_ENUM
 import sheets_handler
 
 # --- OAuth Imports ---
@@ -297,7 +299,6 @@ def main():
     args = parser.parse_args()
     # --- End Argument Parsing ---
 
-    cfg = config.load_config() # Load configuration
     if not cfg:
         logger.critical("Failed to load configuration. Exiting.")
         return
